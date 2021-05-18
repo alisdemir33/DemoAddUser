@@ -1,16 +1,15 @@
 import React from 'react';
-
-import './ErrorModal.css';
+import classes from './ErrorModal.module.css';
 
 const ErrorModal = React.memo(props => {
   return (
     <React.Fragment>
-      <div className="backdrop" onClick={props.onClose} />
-      <div className="error-modal">
+      <div className={classes.backdrop} onClick={props.onClose} />
+      <div className={classes.error_modal}>
         <h2>An Error Occurred!</h2>
         <p>{props.children}</p>
-        <div className="error-modal__actions">
-          <button type="button" onClick={props.onClose}>
+        <div className={classes.error_modal__actions}>
+          <button className={classes.button} type="button" onClick={props.onClose}>
             Okay
           </button>
         </div>

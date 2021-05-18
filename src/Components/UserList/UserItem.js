@@ -4,8 +4,9 @@ const UserItem = (props) =>{
 
     return(
         <div>
-            <div>{props.userName}</div>
-            <div>{props.userAge}</div>
+            <div><span> Name: {props.userName}</span> 
+            <span></span>
+            <span> Age: {props.userAge}</span> </div>
         </div>
     );
 }

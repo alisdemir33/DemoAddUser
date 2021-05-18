@@ -1,6 +1,8 @@
 import React, { useState } from 'react'
 import Card from '../../UI/Card'
-import classes from './UserFRom'
+import buttonStyle from '../../UI/Button.module.css'
+import inputStyles from './UserForm.module.css'
+
 
 const UserForm = (props) => {
 
@@ -28,13 +30,16 @@ const onUserAgeChange = (event) => {
     }
     return (
         <Card>
-            <form onSubmit={addClickHandler}>
+            <div className={inputStyles.input}>
+                <form onSubmit={addClickHandler}>
                 <label htmlFor="UserName">User Name</label>
-                <input type="text" name="UserName" value={userName} onChange={onUserNameChange} />
+                <input  type="text" name="UserName" value={userName} onChange={onUserNameChange} />
                 <label htmlFor="UserAge">Age</label>
                 <input type="text"  value={userAge} onChange ={onUserAgeChange}></input>
-                <button type="submit">Add User</button>
+                <button className={buttonStyle.button} type="submit">Add User</button>
             </form>
+            </div>
+           
         </Card>
     );
 

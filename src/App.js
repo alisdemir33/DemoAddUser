@@ -1,10 +1,14 @@
 import React, { useState } from 'react';
 import UserForm from './Components/UserForm/UserForm'
 import UserList from './Components/UserList/UserList'
+import mainStyle from  './UI/App.module.css'
+import ErrorModal from './UI/ErrorModal'
 
 
 function App() {
-
+    const[error,setError] = useState(false);
+    const[errorMessage,setErrorMessage] = useState('');
+  
   const [userList, setUserList] = useState(
   [ 
      {
@@ -21,14 +25,29 @@ function App() {
   )
 
   const addUserHandler = (user) => {
+   
+    if(user.userAge>50){
+      setError(true);
+      setErrorMessage('yavaşş')
+      return;
+    }
+   
     setUserList((prevState) => {
       return [user, ...prevState]
     })
   }
 
+  const clear = () =>{
+    setError(false);
+  }
+
+
 
   return (
-    <div>
+   
+   
+    <div className={mainStyle.mainBox}>
+       {error && <ErrorModal onClose={clear}> {errorMessage}</ErrorModal>}
       <UserForm onAddUser={addUserHandler}>
       </UserForm>
 

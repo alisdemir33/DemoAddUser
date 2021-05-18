@@ -1,4 +1,4 @@
-.error-modal {
+.error_modal {
   position: fixed;
   top: 30vh;
   left: calc(50% - 15rem);
@@ -9,7 +9,7 @@
   border-radius: 7px;
 }
 
-.error-modal h2 {
+.error_modal h2 {
   margin: 0;
   padding: 1rem;
   background: #ff2058;
@@ -17,11 +17,11 @@
   border-radius: 7px 7px 0 0;
 }
 
-.error-modal p {
+.error_modal p {
     padding: 1rem;
 }
 
-.error-modal__actions {
+.error_modal__actions {
     display: flex;
     justify-content: flex-end;
     padding: 0 0.5rem;
@@ -35,4 +35,15 @@
   height: 100vh;
   background: rgba(0, 0, 0, 0.75);
   z-index: 50;
+}
+
+.button {
+  font: inherit;
+  border: 1px solid #4f005f;
+  background:brown;
+  color: white;
+  padding: 0.25rem 1rem;
+  cursor: pointer;
+  border-radius: 5px;
+  margin: 1rem;
 }
