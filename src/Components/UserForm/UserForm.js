@@ -6,40 +6,41 @@ import inputStyles from './UserForm.module.css'
 
 const UserForm = (props) => {
 
-const [userName,setUserName] =useState('');
-const [userAge, setUserAge]=useState('');
+    const [userName, setUserName] = useState('');
+    const [userAge, setUserAge] = useState('');
 
-const onUserNameChange = (event) => {
-setUserName(event.target.value);
-}
-const onUserAgeChange = (event) => {
-   setUserAge(event.target.value) 
-}
+    const onUserNameChange = (event) => {
+        setUserName(event.target.value);
+    }
+    const onUserAgeChange = (event) => {
+        setUserAge(event.target.value)
+    }
 
     const addClickHandler = (event) => {
         event.preventDefault()
 
         props.onAddUser(
             {
-                id:Math.random()*1000,
+                id: Math.random() * 1000,
                 userName,
                 userAge
             }
-        )
+        );
+
+        setUserAge('');
+        setUserName('')
 
     }
     return (
-        <Card>
-            <div className={inputStyles.input}>
-                <form onSubmit={addClickHandler}>
-                <label htmlFor="UserName">User Name</label>
-                <input  type="text" name="UserName" value={userName} onChange={onUserNameChange} />
-                <label htmlFor="UserAge">Age</label>
-                <input type="text"  value={userAge} onChange ={onUserAgeChange}></input>
+        <Card className={inputStyles.input}>
+            <form onSubmit={addClickHandler}>
+                <label htmlFor="userName">User Name</label>
+                <input type="text" id="userName" value={userName} onChange={onUserNameChange} />
+                <label htmlFor="userAge">Age</label>
+                <input type="text" id="userAge" value={userAge} onChange={onUserAgeChange}></input>
                 <button className={buttonStyle.button} type="submit">Add User</button>
             </form>
-            </div>
-           
+
         </Card>
     );
 

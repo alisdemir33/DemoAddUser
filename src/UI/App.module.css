@@ -1,11 +1,11 @@
 .mainBox {
     background-color: #f1f1e8;
-    padding: 1rem;
+    padding: 0.5rem;
     margin: 1rem auto;
     width: 50rem;
     max-width: 95%;
     border-radius: 12px;
-    text-align: center;
+    /* text-align: center; */
     box-shadow: 0 1px 8px rgba(0, 0, 0, 0.25);
   }
   
